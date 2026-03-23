@@ -29,6 +29,7 @@ const App = {
 
     // Render carousels
     this.renderCarousels();
+    this.applyResponsiveLayout();
 
     // Setup profile card with photos and stats
     this.setupProfileCard();
@@ -55,6 +56,7 @@ const App = {
       highlightReelBtn: document.getElementById('highlightReelBtn'),
 
       // Hero video
+      contentMiddle: document.querySelector('.content-middle'),
       heroVideoWrapper: document.getElementById('heroVideoWrapper'),
       heroTitle: document.getElementById('heroTitle'),
       heroSubtitle: document.getElementById('heroSubtitle'),
@@ -73,7 +75,9 @@ const App = {
       categoriesList: document.getElementById('categoriesList'),
 
       // Carousels
+      carouselsSection: document.getElementById('carouselsSection'),
       carouselsContainer: document.getElementById('carouselsContainer'),
+      mobileCarouselsSlot: document.getElementById('mobileCarouselsSlot'),
 
       // Profile Card
       photoCarouselContainer: document.getElementById('photoCarouselContainer'),
@@ -286,6 +290,18 @@ const App = {
 
       this.elements.carouselsContainer.appendChild(carousel);
     });
+  },
+
+  applyResponsiveLayout() {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const { carouselsSection, mobileCarouselsSlot, contentMiddle } = this.elements;
+    if (!carouselsSection || !mobileCarouselsSlot || !contentMiddle) return;
+
+    if (isMobile) {
+      mobileCarouselsSlot.appendChild(carouselsSection);
+    } else {
+      contentMiddle.appendChild(carouselsSection);
+    }
   },
 
   scrollCarousel(categoryIndex, direction) {
@@ -569,6 +585,7 @@ const App = {
     const totalPhotos = PLAYER_DATA.profilePhotos.length;
     // Highlight Reel button
     this.elements.highlightReelBtn.addEventListener('click', () => this.scrollToHero());
+    window.addEventListener('resize', () => this.applyResponsiveLayout());
 
     // Photo carousel
     this.elements.photoPrev.addEventListener('click', () => this.prevPhoto(totalPhotos));

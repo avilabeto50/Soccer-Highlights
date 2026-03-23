@@ -368,6 +368,10 @@ body {
   gap: var(--spacing-xl);
 }
 
+.mobile-carousels-slot {
+  display: none;
+}
+
 .carousel {
   background: var(--bg-secondary);
   border-radius: var(--radius-lg);
@@ -1111,38 +1115,69 @@ body {
 
 @media (max-width: 768px) {
   .clips-navbar {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "title title"
+      "highlight resume"
+      "categories categories";
+    gap: var(--spacing-sm);
     padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .clips-navbar-header {
+    grid-area: title;
+    text-align: center;
   }
 
   .clips-navbar-header h2 {
     font-size: var(--font-size-base);
   }
 
+  .btn-highlight-reel {
+    grid-area: highlight;
+    width: 100%;
+  }
+
   .clips-navbar-resume {
+    grid-area: resume;
+    width: 100%;
     font-size: var(--font-size-sm);
     padding: var(--spacing-xs) var(--spacing-sm);
   }
 
+  .clips-navbar-scroll {
+    grid-area: categories;
+    width: 100%;
+  }
+
   .layout-container {
     flex-direction: column;
-    pad: var(--spacing-md);
+    padding: var(--spacing-md);
     min-height: auto;
-    max-height: calc(100vh - 80px);
+    max-height: none;
+    overflow: visible;
   }
 
   .content-middle {
     width: 100%;
     max-height: none;
+    overflow: visible;
     padding-right: 0;
-    order: -1;
+    padding-bottom: 0;
   }
 
   .sidebar-right {
     width: 100%;
     max-height: none;
+    overflow: visible;
     padding-right: 0;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .mobile-carousels-slot {
+    display: block;
+    padding: 0 var(--spacing-md) var(--spacing-lg);
   }
 
   .carousel-card {
@@ -1183,7 +1218,7 @@ body {
   }
 
   .resume-card {
-    display: none;
+    display: flex;
   }
 }
 
