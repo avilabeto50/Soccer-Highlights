@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aaron J. Avila Jimenez - Soccer Highlight Reel & Athletic Resume</title>
+  <link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" sizes="16x16" href="photos/icon.webp">
+
+</head>
+<body>
+  <div class="app">
+    <!-- Top Clips Navigation Bar -->
+    <nav class="clips-navbar">
+      <div class="clips-navbar-header">
+        <h2>Aaron J. Avila Jimenez</h2>
+      </div>
+      <button id="highlightReelBtn" class="btn btn-highlight-reel">
+        ⭐ Highlight Reel
+      </button>
+      <div class="clips-navbar-scroll">
+        <ul id="categoriesList" class="categories-nav-horizontal"></ul>
+      </div>
+      <button id="showResumeBtn" class="btn btn-primary clips-navbar-resume">
+        📄 Resume
+      </button>
+    </nav>
+
+    <!-- 2-Column Layout Container -->
+    <div class="layout-container">
+      <!-- MIDDLE CONTENT - Videos Section (2/3 width) -->
+      <main class="content-middle">
+        <!-- Hero Video Section -->
+        <section id="heroSection" class="hero-section">
+          <div class="video-container">
+            <div id="heroVideoWrapper" class="video-wrapper"></div>
+            <div class="video-overlay">
+              <h1 id="heroTitle"></h1>
+              <p id="heroSubtitle"></p>
+            </div>
+          </div>
+        </section>
+        <!-- Selected Clip Player (keeps hero reel intact) -->
+        <section id="selectedClipSection" class="selected-clip-section hidden">
+          <div class="selected-clip-heading">
+            <h3>Selected Clip</h3>
+          </div>
+          <div class="video-container">
+            <div id="selectedVideoWrapper" class="video-wrapper"></div>
+            <div class="video-overlay selected-video-overlay">
+              <h2 id="selectedVideoTitle"></h2>
+              <p id="selectedVideoSubtitle"></p>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- Carousels Section -->
+        <section id="carouselsSection" class="carousels-section">
+          <div id="carouselsContainer"></div>
+        </section>
+      </main>
+
+      <!-- RIGHT SIDEBAR - Profile Card (1/3 width) -->
+      <aside class="sidebar-right">
+        <!-- Profile Card -->
+        <div class="profile-card">
+          <!-- Photo Carousel -->
+          <div class="photo-carousel-wrapper">
+            <div class="photo-carousel">
+              <div id="photoCarouselContainer" class="carousel-photos"></div>
+            </div>
+            <div class="carousel-dots" id="carouselDots"></div>
+            <button class="carousel-prev" id="photoPrev" aria-label="Previous photo">‹</button>
+            <button class="carousel-next" id="photoNext" aria-label="Next photo">›</button>
+          </div>
+
+          <!-- Player Info -->
+          <div class="player-info">
+            <h2 id="profileName"></h2>
+            <div class="player-badges">
+              <span class="badge badge-position" id="profilePosition"></span>
+              <span class="badge badge-school" id="profileSchool"></span>
+            </div>
+          </div>
+
+          <!-- Contact Button -->
+          <div class="btn-contact-wrapper">
+            <button id="contactBtn" class="btn btn-primary btn-full btn-contact">
+              📧 Contact Information
+            </button>
+          </div>
+        </div>
+        <div class="resume-card" id="resumeCard">
+          <div class="resume-card-header">
+            <p class="resume-card-label">Resume Snapshot</p>
+            <h3>Season Highlights</h3>
+          </div>
+          <div class="resume-card-stats" id="resumeCardStats"></div>
+          <div class="resume-card-highlights">
+            <h4>Career Highlights</h4>
+            <ul id="resumeCardHighlights"></ul>
+          </div>
+          <button id="resumeCardBtn" class="btn btn-primary btn-full btn-resume-card">
+            View Full Resume
+          </button>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Resume Section (Hidden by default) -->
+    <section id="resumeSection" class="resume-section hidden">
+      <div class="resume-content">
+        <button id="closeResumeBtn" class="close-btn">← Back to Videos</button>
+
+        <div class="resume-header">
+          <h1 id="resumeName"></h1>
+          <p id="resumePosition"></p>
+          <p id="resumeContact"></p>
+        </div>
+
+        <div class="resume-body">
+          <!-- Personal Statement -->
+          <article class="resume-section-article">
+            <h2>Personal Statement</h2>
+            <p id="personalStatement"></p>
+          </article>
+
+          <!-- Athletic Stats -->
+          <article class="resume-section-article">
+            <h2>Current Season Stats</h2>
+            <div class="stats-grid-detailed" id="currentSeasonStats"></div>
+
+            <h3>Career Highlights</h3>
+            <ul id="careerHighlightsList"></ul>
+
+            <h3>Achievements</h3>
+            <ul id="achievementsList"></ul>
+          </article>
+
+          <!-- Academic Info -->
+          <article class="resume-section-article">
+            <h2>Academic Profile</h2>
+            <div class="academic-info">
+              <div class="info-item">
+                <strong>GPA:</strong>
+                <span id="academicGpa"></span>
+              </div>
+              <div class="info-item">
+                <strong>Advanced Courses:</strong>
+                <ul id="advancedCoursesList"></ul>
+              </div>
+              <div class="info-item">
+                <strong>Awards:</strong>
+                <ul id="academicAwardsList"></ul>
+              </div>
+              <div class="info-item">
+                <strong>Extracurriculars:</strong>
+                <ul id="extracurricularsList"></ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- References -->
+          <article class="resume-section-article">
+            <h2>References</h2>
+            <div class="references-list" id="referencesList"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Modal (Hidden by default) -->
+    <div id="contactModal" class="modal hidden">
+      <div class="modal-content">
+        <button id="closeContactBtn" class="close-btn">×</button>
+        <h2>Contact Information</h2>
+        <div class="contact-info">
+          <p><strong>Name:</strong> <span id="contactName"></span></p>
+          <p><strong>Email:</strong> <a id="contactEmail" href=""></a></p>
+          <p><strong>Phone:</strong> <span id="contactPhone"></span></p>
+          <p><strong>School:</strong> <span id="contactSchool"></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="stats_db.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
+
+
