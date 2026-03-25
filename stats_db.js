@@ -4,12 +4,15 @@ const PLAYER_DATA = {
   player: {
     name: "Aaron J. Avila Jimenez",
     school: "John B Alexander High School",
+    ClubTeam: "Laredo Heat SC U17 ",
+    Area: "South Texas",
+    City: "Laredo, Texas",
     classYear: "Sophomore (Class of 2028)",
     gpa: "3.8",
-    positions: ["CM", "CAM", "CDM"],
-    aspiringMajors: ["Kinesiology", "Sports Medicine", "Physical Therapy"],
-    email: "aaron.j.avila.jimenez@example.com",
-    phone: "(555) 123-4567"
+    positions: ["CM", "CAM", "ST"],
+    aspiringMajors: ["Kinesiology", "Sports Medicine", "Athletic Trainer"],
+    email: "aaron.avilajimenez2010@gmail.com",
+    phone: "(956) 558-4129"
   },
 
   // Hero video - main highlight reel
@@ -75,7 +78,7 @@ const PLAYER_DATA = {
         },
         {
           url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-          title: "Back Heel Assist",
+          title: "Ping Ball Assist",
           date: "February 20, 2026"
         }
       ]
@@ -122,9 +125,9 @@ const PLAYER_DATA = {
       icon: "🛡️",
       clips: [
         {
-          url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-          title: "Crucial Sliding Tackle",
-          date: "February 5, 2026"
+          url: "videos/defending/010226Ball Recovery.mov",
+          title: "Recovering and Keeping Possession",
+          date: "January 2, 2026"
         },
         {
           url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
@@ -159,22 +162,8 @@ const PLAYER_DATA = {
         }
       ]
     },
-    {
-      name: "Free Kicks",
-      icon: "⚡",
-      clips: [
-        {
-          url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-          title: "Direct Free Kick Goal",
-          date: "January 20, 2026"
-        },
-        {
-          url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-          title: "Indirect Free Kick Setup",
-          date: "January 18, 2026"
-        }
-      ]
-    },
+    
+      
     {
       name: "Penalty Kicks",
       icon: "🎪",

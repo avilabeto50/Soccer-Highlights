@@ -744,6 +744,45 @@ body {
   color: white;
 }
 
+.badge-club {
+  background: var(--primary-light);
+  color: white;
+}
+
+/* Player Location & Resume Info */
+.player-location-info {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-sm);
+}
+
+.location-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location-item strong {
+  color: var(--text-muted);
+}
+
+.location-item span {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.player-resume-link {
+  margin-top: var(--spacing-md);
+}
+
+.btn-inline-resume {
+  background: var(--primary);
+}
+
 /* Stats Grid */
 .stats-grid {
   display: grid;
