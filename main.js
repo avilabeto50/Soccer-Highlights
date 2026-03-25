@@ -87,6 +87,10 @@ const App = {
       profileName: document.getElementById('profileName'),
       profilePosition: document.getElementById('profilePosition'),
       profileSchool: document.getElementById('profileSchool'),
+      profileClub: document.getElementById('profileClub'),
+      profileCity: document.getElementById('profileCity'),
+      profileArea: document.getElementById('profileArea'),
+      inlineResumeBtn: document.getElementById('inlineResumeBtn'),
 
       // Buttons
       showResumeBtn: document.getElementById('showResumeBtn'),
@@ -336,6 +340,9 @@ const App = {
     this.elements.profileName.textContent = player.name;
     this.elements.profilePosition.textContent = player.positions.join(', ');
     this.elements.profileSchool.textContent = player.school;
+    this.elements.profileClub.textContent = player.ClubTeam;
+    this.elements.profileCity.textContent = player.City;
+    this.elements.profileArea.textContent = player.Area;
 
     // Setup photo carousel
     this.renderPhotoCarousel(photos);
@@ -597,6 +604,10 @@ const App = {
 
     if (this.elements.resumeCardBtn) {
       this.elements.resumeCardBtn.addEventListener('click', () => this.showResume());
+    }
+
+    if (this.elements.inlineResumeBtn) {
+      this.elements.inlineResumeBtn.addEventListener('click', () => this.showResume());
     }
 
     // Contact
